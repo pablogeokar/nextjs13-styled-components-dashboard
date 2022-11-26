@@ -1,10 +1,20 @@
-import 'styled-components'
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      primary: string
-      secondary: string
+      body: string;
+      sidebar: string;
+      primary: string;
+      primaryLight: string;
+      toggle: string;
+      text: string;
+    },
+    transition:{
+      tran02: string
+      tran03: string
+      tran04: string
+      tran05: string
     }
   }
 }
