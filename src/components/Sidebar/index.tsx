@@ -1,95 +1,67 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import * as C from './styles'
 import { Moon, Sun, SignOut, UserList, CaretRight, House, MagnifyingGlass, UsersThree, Briefcase, MathOperations } from "phosphor-react";
 
+
 export function Sidebar() {
-  const [trueMode, setTrueMode] = useState(false);
+  const [close, setClose] = useState(false)
   return (
-    <C.Container>
+    <C.Wrapper className={close && 'close'}>
 
-      <C.Header>
+      <div>
+        <div className={close ? 'logo close' : 'logo'}>
+          <img src="/logo.svg" alt="Kontabb" />
+        </div>
 
-        <C.Logo>
-          <C.LogoImg src='/logo.svg' />
-        </C.Logo>
-
-        <C.Toggle>
-          <CaretRight size={22} />
+        <C.Toggle onClick={() => setClose(!close)}>
+          <CaretRight />
         </C.Toggle>
 
-      </C.Header>
-
-      <C.Menu>
-        <C.Links>
-          <C.Option>
-            <MagnifyingGlass size={36} weight="thin" />
-            <input type="search" placeholder="buscar por..." />
-          </C.Option>
+        <C.Menu>
 
           <C.Option>
-            <a href='#'>
-              <House size={28} weight="thin" />
-              <span>Página Inicial</span>
+            <a href="#" className={close && 'close'}>
+              <House size={30} weight="thin" />
+              <span className={close && 'close'}>Página Inicial</span>
             </a>
           </C.Option>
 
           <C.Option>
-            <a href='#'>
+            <a href="#" className={close && 'close'}>
               <UsersThree size={28} weight="thin" />
-              <span>Folha de Pagamento</span>
+              <span className={close && 'close'}>Folha de Pagamento</span>
             </a>
           </C.Option>
 
           <C.Option>
-            <a href='#'>
+            <a href="#" className={close && 'close'}>
               <Briefcase size={28} weight="thin" />
-              <span>Setor Fiscal</span>
+              <span className={close && 'close'}>Setor Fiscal</span>
             </a>
           </C.Option>
 
           <C.Option>
-            <a href='#'>
+            <a href="#" className={close && 'close'}>
               <MathOperations size={28} weight="thin" />
-              <span>Setor Contábil</span>
+              <span className={close && 'close'}>Setor Contábil</span>
             </a>
           </C.Option>
 
           <C.Option>
-            <a href='#'>
+            <a href="#" className={close && 'close'}>
               <UserList size={28} weight="thin" />
-              <span>Clientes</span>
+              <span className={close && 'close'}>Clientes</span>
             </a>
           </C.Option>
 
-          {/* Sidebar Footer */}
-          <C.Footer>
 
-            <C.Option>
-              <a href='#'>
-                <SignOut size={28} weight="thin" />
-                <span>Logout</span>
-              </a>
-            </C.Option>
+        </C.Menu>
+      </div>
 
-            <C.Option>
-              <div className="mode">
-                <div className="dark-light">
-                  <Moon size={28} weight="thin" />
-                  <Sun size={28} weight="thin" />
-                </div>
+      <div className="footer">
+        FOOTER
+      </div>
 
-                <span className='mode-text'>Dark Mode</span>
-
-                <div className="toggle-switch" onClick={() => setTrueMode(!trueMode)}>
-                  <span className={`switch ${trueMode && 'trueMode'}`}></span>
-                </div>
-              </div>
-            </C.Option>
-
-          </C.Footer>
-
-        </C.Links>
-      </C.Menu>
-    </C.Container>
+    </C.Wrapper>
   )
 }

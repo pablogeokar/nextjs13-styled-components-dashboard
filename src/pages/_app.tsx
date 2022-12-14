@@ -3,7 +3,7 @@ import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../components/globalstyles'
 import '../styles/style.css'
 
-const theme: DefaultTheme = {
+const themeLight: DefaultTheme = {
   colors: {
     body: '#E4E9F7',
     sidebar: '#FFF',
@@ -20,10 +20,28 @@ const theme: DefaultTheme = {
   }
 }
 
+const themeDark: DefaultTheme = {
+  colors: {
+    body: '#18191A',
+    sidebar: '#242526',
+    primary: '#3A3B3C',
+    primaryLight: '#3A3B3C',
+    toggle: '#FFF',
+    text: '#CCC'
+  },
+  transition: {
+    tran02: 'all 0.2s ease',
+    tran03: 'all 0.3s ease',
+    tran04: 'all 0.4s ease',
+    tran05: 'all 0.25s ease'
+  }
+}
+
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themeLight}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
