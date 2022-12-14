@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import * as C from './styles'
-import { Moon, Sun, SignOut, UserList, CaretRight, House, MagnifyingGlass, UsersThree, Briefcase, MathOperations } from "phosphor-react";
+import { UserList, CaretRight, House, UsersThree, Briefcase, MathOperations } from "phosphor-react";
+import { Link } from './partials/Link';
 
 
 export function Sidebar() {
@@ -19,41 +20,11 @@ export function Sidebar() {
 
         <C.Menu>
 
-          <C.Option>
-            <a href="#" className={close && 'close'}>
-              <House size={30} weight="thin" />
-              <span className={close && 'close'}>Página Inicial</span>
-            </a>
-          </C.Option>
-
-          <C.Option>
-            <a href="#" className={close && 'close'}>
-              <UsersThree size={28} weight="thin" />
-              <span className={close && 'close'}>Folha de Pagamento</span>
-            </a>
-          </C.Option>
-
-          <C.Option>
-            <a href="#" className={close && 'close'}>
-              <Briefcase size={28} weight="thin" />
-              <span className={close && 'close'}>Setor Fiscal</span>
-            </a>
-          </C.Option>
-
-          <C.Option>
-            <a href="#" className={close && 'close'}>
-              <MathOperations size={28} weight="thin" />
-              <span className={close && 'close'}>Setor Contábil</span>
-            </a>
-          </C.Option>
-
-          <C.Option>
-            <a href="#" className={close && 'close'}>
-              <UserList size={28} weight="thin" />
-              <span className={close && 'close'}>Clientes</span>
-            </a>
-          </C.Option>
-
+          <Link link="#" close={close} label="Página Inicial" icon={<House size={30} weight="thin" />} />
+          <Link link="#" close={close} label="Folha de Pagamento" icon={<UsersThree size={28} weight="thin" />} />
+          <Link link="#" close={close} label="Setor Fiscal" icon={<Briefcase size={28} weight="thin" />} />
+          <Link link="#" close={close} label="Setor Contábil" icon={<MathOperations size={28} weight="thin" />} />
+          <Link link="#" close={close} label="Clientes" icon={<UserList size={28} weight="thin" />} />
 
         </C.Menu>
       </div>

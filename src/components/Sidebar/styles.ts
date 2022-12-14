@@ -56,47 +56,7 @@ export const Toggle = styled.div`
 export const Menu = styled.ul`
   list-style: none;
   padding: 0;
-  margin-top: 24px;
+  margin-top: 24px;  
 `;
 
-export const Option = styled.li`
-  padding: 4px;
 
-  a {
-    position: relative;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    padding: 12px;
-    transition: ${({ theme }) => theme.transition.tran04};
-
-    &.close {
-      justify-content: center;
-      :hover {
-        span{ 
-          color: #fff;
-          padding: 8px;
-          background-color: ${({ theme }) => theme.colors.primary};
-          border-radius: 8px;
-          opacity: .9;
-          display: block;
-        }
-      }
-    }
-
-    span {
-      &.close {
-        position: absolute;
-        width: 200px;
-        left: 84px;        
-        display: none;
-      }
-    }
-
-    &:hover {
-      background: ${({ theme }) => theme.colors.primary};
-      color: ${({ theme }) => theme.colors.sidebar};
-      border-radius: 8px;
-    }
-  }
-`;
