@@ -10,14 +10,14 @@ const themeLight: DefaultTheme = {
     sidebar: '#FFF',
     primary: '#0284c7',
     primaryLight: '#f3f4f6',
-    toggle: '#DDD',
+    toggle: '#f3f4f6',
     text: '#707070'
   },
   transition: {
     tran02: 'all 0.2s ease',
     tran03: 'all 0.3s ease',
     tran04: 'all 0.4s ease',
-    tran05: 'all 0.25s ease'
+    tran05: 'all 0.6s ease'
   }
 }
 
@@ -34,7 +34,7 @@ const themeDark: DefaultTheme = {
     tran02: 'all 0.2s ease',
     tran03: 'all 0.3s ease',
     tran04: 'all 0.4s ease',
-    tran05: 'all 0.25s ease'
+    tran05: 'all 0.6s ease',
   }
 }
 

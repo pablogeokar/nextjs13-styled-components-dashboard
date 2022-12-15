@@ -30,7 +30,12 @@ export const Container = styled.li`
     align-items: center;
     padding: 12px;
     gap: 8px;
-    transition: ${({ theme }) => theme.transition.tran04};    
+    transition: ${({ theme }) => theme.transition.tran04};  
+    
+    svg{
+      width: 30px;
+      height: 30px
+    }
 
     :hover{
       background-color: ${({ theme }) => theme.colors.primary};
@@ -55,7 +60,7 @@ export const Container = styled.li`
         width: 140px;        
       }
       svg{
-        margin-left:12px;        
+        margin-left:12px;         
       }
       :hover{
         span{

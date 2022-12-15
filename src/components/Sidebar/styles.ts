@@ -50,13 +50,23 @@ export const Toggle = styled.div`
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  color: ${({ theme }) => theme.colors.sidebar};
+  color: ${({ theme }) => theme.colors.toggle};
+  svg {
+    transform: rotate(180deg);
+    transition: ${({ theme }) => theme.transition.tran05};
+  }
+  &.close {
+    svg {
+      transform: rotate(0deg);
+    }
+  }
+  :hover {
+    filter: saturate(1.4);
+  }
 `;
 
 export const Menu = styled.ul`
   list-style: none;
   padding: 0;
-  margin-top: 24px;  
+  margin-top: 24px;
 `;
-
-

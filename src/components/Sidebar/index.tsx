@@ -14,17 +14,17 @@ export function Sidebar() {
           <img src="/logo.svg" alt="Kontabb" />
         </div>
 
-        <C.Toggle onClick={() => setClose(!close)}>
-          <CaretRight />
+        <C.Toggle onClick={() => setClose(!close)} className={close && 'close'}>
+          <CaretRight size={24} />
         </C.Toggle>
 
         <C.Menu>
 
-          <Link link="#" close={close} label="Página Inicial" icon={<House size={30} weight="thin" />} />
-          <Link link="#" close={close} label="Folha de Pagamento" icon={<UsersThree size={28} weight="thin" />} />
-          <Link link="#" close={close} label="Setor Fiscal" icon={<Briefcase size={28} weight="thin" />} />
-          <Link link="#" close={close} label="Setor Contábil" icon={<MathOperations size={28} weight="thin" />} />
-          <Link link="#" close={close} label="Clientes" icon={<UserList size={28} weight="thin" />} />
+          <Link link="#" close={close} label="Página Inicial" icon={<House weight="thin" />} />
+          <Link link="#" close={close} label="Folha de Pagamento" icon={<UsersThree weight="thin" />} />
+          <Link link="#" close={close} label="Setor Fiscal" icon={<Briefcase weight="thin" />} />
+          <Link link="#" close={close} label="Setor Contábil" icon={<MathOperations weight="thin" />} />
+          <Link link="#" close={close} label="Clientes" icon={<UserList weight="thin" />} />
 
         </C.Menu>
       </div>
