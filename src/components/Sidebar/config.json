@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Página Inicial",
+    "link": "/",
+    "icon": "House"
+  },
+  {
+    "label": "Folha de Pagamento",
+    "link": "/",
+    "icon": "UsersThree"
+  },
+  {
+    "label": "Setor Fiscal",
+    "link": "/",
+    "icon": "Briefcase"
+  },
+  {
+    "label": "Setor Contábil",
+    "link": "/",
+    "icon": "MathOperations"
+  },
+  {
+    "label": "Clientes",
+    "link": "/",
+    "icon": "UserList"
+  }
+]

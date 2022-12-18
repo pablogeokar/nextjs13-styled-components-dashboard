@@ -1,11 +1,21 @@
 import { useState } from 'react';
 import * as C from './styles'
-import { UserList, CaretRight, House, UsersThree, Briefcase, MathOperations } from "phosphor-react";
+import { CaretRight } from "phosphor-react";
+
+
 import { Link } from './partials/Link';
+
+import MenuOptions from './config.json';
+
+function getIcon(icon: string) {
+  const Icon = require(`../../../node_modules/phosphor-react`)[icon]
+  return Icon
+}
 
 
 export function Sidebar() {
   const [close, setClose] = useState(false)
+
   return (
     <C.Wrapper className={close && 'close'}>
 
@@ -15,16 +25,17 @@ export function Sidebar() {
         </div>
 
         <C.Toggle onClick={() => setClose(!close)} className={close && 'close'}>
-          <CaretRight size={24} />
+          <CaretRight size={20} />
         </C.Toggle>
 
         <C.Menu>
 
-          <Link link="#" close={close} label="Página Inicial" icon={<House weight="thin" />} />
-          <Link link="#" close={close} label="Folha de Pagamento" icon={<UsersThree weight="thin" />} />
-          <Link link="#" close={close} label="Setor Fiscal" icon={<Briefcase weight="thin" />} />
-          <Link link="#" close={close} label="Setor Contábil" icon={<MathOperations weight="thin" />} />
-          <Link link="#" close={close} label="Clientes" icon={<UserList weight="thin" />} />
+          {
+            MenuOptions.map(item => {
+              const Icon = getIcon(item.icon)
+              return < Link link={item.link} close={close} label={item.label} icon={<Icon weight="thin" />} />
+            })
+          }
 
         </C.Menu>
       </div>

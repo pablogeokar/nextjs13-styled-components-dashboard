@@ -43,12 +43,12 @@ export const Toggle = styled.div`
   justify-content: center;
   position: absolute;
   top: 25px;
-  right: -25px;
+  right: -20px;
   transform: translateY(-50%);
   background: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
-  height: 44px;
-  width: 44px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   color: ${({ theme }) => theme.colors.toggle};
   svg {

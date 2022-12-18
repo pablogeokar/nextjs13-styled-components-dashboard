@@ -13,5 +13,5 @@ export const Header = styled.header`
   height: 70px;
   background-color: #fff;
   padding: 16px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+//  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
