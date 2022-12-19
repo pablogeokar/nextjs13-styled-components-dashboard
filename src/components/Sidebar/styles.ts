@@ -15,8 +15,8 @@ export const Wrapper = styled.div`
   &.close {
     width: 88px;
     @media only screen and (max-width: 768px) {
-      width: 5px;
-      left: 5px;
+      width: 0;
+      //left: -88px;
     }
   }
 
@@ -43,7 +43,7 @@ export const Toggle = styled.div`
   justify-content: center;
   position: absolute;
   top: 25px;
-  right: -20px;
+  right: -38px;
   transform: translateY(-50%);
   background: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
@@ -58,7 +58,7 @@ export const Toggle = styled.div`
   &.close {
     svg {
       transform: rotate(0deg);
-    }
+    }    
   }
   :hover {
     filter: saturate(1.4);
