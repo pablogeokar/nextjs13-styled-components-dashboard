@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Poppins', sans-serif;
     height: 100vh;    
-    background:  ${({ theme }) => theme.colors.body};
+    background:  ${({ theme }) => theme.colors.body};    
     transition:  ${({ theme }) => theme.transition.tran04};
   }
 

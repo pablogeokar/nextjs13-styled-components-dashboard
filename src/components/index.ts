@@ -1,4 +1,6 @@
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./Sidebar/Sidebar";
 import * as Layout from "../styles/Layout";
+import { Input } from "./Input/Input";
+import { Button } from './Button/Button';
 
-export { Layout, Sidebar };
+export { Layout, Sidebar, Input, Button };

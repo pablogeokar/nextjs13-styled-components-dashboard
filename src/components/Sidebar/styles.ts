@@ -7,7 +7,8 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 100vh;
   width: 250px;
-  background: ${({ theme }) => theme.colors.sidebar};
+  //background: ${({ theme }) => theme.colors.sidebar};
+  background: #f1f2f6;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   color: ${({ theme }) => theme.colors.text};
   transition: ${({ theme }) => theme.transition.tran04};
