@@ -8,7 +8,7 @@ import { Link } from './partials/Link';
 import MenuOptions from './config.json';
 
 function getIcon(icon: string) {
-  const Icon = require(`../../../node_modules/phosphor-react`)[icon]
+  const Icon = require(`../../../node_modules/phosphor-react`)[icon]  
   return Icon
 }
 
@@ -33,7 +33,7 @@ export function Sidebar() {
           {
             MenuOptions.map(item => {
               const Icon = getIcon(item.icon)
-              return < Link link={item.link} close={close} label={item.label} icon={<Icon weight="thin" />} />
+              return <Link key={item.label} link={item.link} close={close} label={item.label} icon={<Icon weight="thin" />} />
             })
           }
 

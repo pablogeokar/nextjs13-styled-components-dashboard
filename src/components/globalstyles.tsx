@@ -1,11 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
+import { Poppins } from '@next/font/google'
+
+const poppins = Poppins({
+  weight: '500'
+})
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {    
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    ${poppins.style}
     height: 100vh;    
     background:  ${({ theme }) => theme.colors.body};    
     transition:  ${({ theme }) => theme.transition.tran04};

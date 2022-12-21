@@ -12,7 +12,7 @@ type TButton = {
 
 export function Button({ label, fullWidth, icon, justifyCenter, textColor = '#fff', bgColor = 'rgb(6 182 212)', onClick }: TButton) {
   return (
-    <ButtonStyled style={{backgroundColor: bgColor, color: textColor}}>
+    <ButtonStyled style={{ backgroundColor: bgColor, color: textColor }} onClick={onClick}>
       {label}
     </ButtonStyled>
   )
