@@ -1,14 +1,16 @@
 import Image from "next/image"
 import { FormEventHandler, useState } from "react"
 import styled from "styled-components"
-import { Input, Button, Notification } from "../../components"
+import { Input, Button } from "../../components"
 import { signIn } from 'next-auth/react'
 import Router from 'next/router'
+import { useToastMessage } from "../../contexts/ToastContext";
 
 
 export default function Login() {
 
   const [userInfo, setUserInfo] = useState({ email: '', password: '' })
+  const { toastMessage } = useToastMessage()
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
@@ -18,12 +20,13 @@ export default function Login() {
     // Se não retornar nenhum erro ao logar então redireciona para o dashboard
     if (!res.error) {
       Router.push('/dashboard')
+    } else {
+      toastMessage({ title: 'Credenciais Inválidas', text: res.error, type: 'error' })
     }
   }
 
   return (
     <Page>
-      <Notification type="success" title="Sucesso" text="Login realizado com sucesso!"/>
       <Box>
         <form onSubmit={handleSubmit}>
           <Row>

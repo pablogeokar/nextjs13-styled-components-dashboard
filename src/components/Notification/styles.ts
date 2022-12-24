@@ -1,9 +1,29 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const ToastInRight = keyframes`
+   from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+`;
+
+export const Wrapper = styled.div`
+  position: fixed;
+  right: 25px;
+  top: 30px;
+  z-index: 10000;
+  transition: 0.3s ease-in-out;
+
+  &.bottom-right {
+    animation: ${ToastInRight} 0.7s;
+  }
+`;
 
 export const Container = styled.div`
-  position: absolute;
-  top: 25px;
-  right: 30px;
+  position: relative;
+  margin-top: 8px;
   border-radius: 12px;
   padding: 20px 35px 20px 25px;
   background-color: #fff;
@@ -11,6 +31,7 @@ export const Container = styled.div`
   border-left: 6px solid;
   opacity: 0.8;
   overflow: hidden;
+  animation: ${ToastInRight} 0.7s;
 
   &.info {
     border-color: ${({ theme }) => theme.colors.info};

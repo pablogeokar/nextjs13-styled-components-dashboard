@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react"
 import Head from 'next/head'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../components/globalstyles'
+import { ToastProvider } from "../contexts/ToastContext";
 
 
 const themeLight: DefaultTheme = {
@@ -56,7 +57,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
       </Head>
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <ToastProvider>
+          <Component {...pageProps} />
+        </ToastProvider>
       </ThemeProvider>
     </SessionProvider>
   )
