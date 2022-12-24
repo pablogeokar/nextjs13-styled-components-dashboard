@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/prisma/seed.ts", "src/pages/api/auth/[...nextauth].js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/prisma/seed.ts", "src/pages/api/auth/[...nextauth].ts"],
   "exclude": ["node_modules"]
 }

@@ -1,35 +1,37 @@
 import Image from "next/image"
-import { useState } from "react"
+import { FormEventHandler, useState } from "react"
 import styled from "styled-components"
 import { Input, Button } from "../../components"
 import { signIn } from 'next-auth/react'
 
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
-  async function Login() {
-    await signIn('credentials', { email, password })
+  const [userInfo, setUserInfo] = useState({ email: '', password: '' })
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault()
+    await signIn('credentials', { email: userInfo.email, password: userInfo.password, redirect: true, callbackUrl: '/dashboard' })
   }
-
 
   return (
     <Page>
       <Box>
-        <Row>
-          <Image src="/logo.svg" width={350} height={90} alt="Kontabb" />
-        </Row>
-        <Row>
-          <Input label="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} type="email" />
-        </Row>
-        <Row className="column flex-end">
-          <Input label="Senha" value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
-          <Small>Esqueceu sua senha?</Small>
-        </Row>
-        <Row>
-          <Button label="Login" onClick={Login} />
-        </Row>
+        <form onSubmit={handleSubmit}>
+          <Row>
+            <Image src="/logo.svg" width={350} height={90} alt="Kontabb" />
+          </Row>
+          <Row>
+            <Input label="E-mail" value={userInfo.email} onChange={({ target }) => setUserInfo({ ...userInfo, email: target.value })} type="email" />
+          </Row>
+          <Row className="column flex-end">
+            <Input label="Senha" value={userInfo.password} onChange={({ target }) => setUserInfo({ ...userInfo, password: target.value })} type="password" />
+            <Small>Esqueceu sua senha?</Small>
+          </Row>
+          <Row>
+            <Button label="Login" />
+          </Row>
+        </form>
       </Box>
     </Page>
   )

@@ -1,4 +1,4 @@
-import { Sidebar, Layout } from "../components";
+import { Sidebar, Layout } from "../../components";
 import {useSession, signOut } from 'next-auth/react'
 
 
