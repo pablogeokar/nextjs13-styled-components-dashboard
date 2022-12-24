@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { FormEventHandler, useState } from "react"
 import styled from "styled-components"
-import { Input, Button } from "../../components"
+import { Input, Button, Notification } from "../../components"
 import { signIn } from 'next-auth/react'
+import Router from 'next/router'
 
 
 export default function Login() {
@@ -11,11 +12,18 @@ export default function Login() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
-    await signIn('credentials', { email: userInfo.email, password: userInfo.password, redirect: true, callbackUrl: '/dashboard' })
+    // Faz o login e armazena o resultado em res
+    const res = await signIn('credentials', { email: userInfo.email, password: userInfo.password, redirect: false, callbackUrl: '/dashboard' })
+
+    // Se não retornar nenhum erro ao logar então redireciona para o dashboard
+    if (!res.error) {
+      Router.push('/dashboard')
+    }
   }
 
   return (
     <Page>
+      <Notification type="success" title="Sucesso" text="Login realizado com sucesso!"/>
       <Box>
         <form onSubmit={handleSubmit}>
           <Row>

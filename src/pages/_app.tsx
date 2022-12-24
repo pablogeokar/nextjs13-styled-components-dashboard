@@ -12,7 +12,11 @@ const themeLight: DefaultTheme = {
     primary: '#0284c7',
     primaryLight: '#f3f4f6',
     toggle: '#f3f4f6',
-    text: '#707070'
+    text: '#707070',
+    info: 'rgb(6 182 212)',
+    error: '#F56565',
+    warning: '#ECC94B',
+    success: '#48BB78'
   },
   transition: {
     tran02: 'all 0.2s ease',
@@ -29,7 +33,11 @@ const themeDark: DefaultTheme = {
     primary: '#3A3B3C',
     primaryLight: '#3A3B3C',
     toggle: '#FFF',
-    text: '#CCC'
+    text: '#CCC',
+    info: 'rgb(6 182 212)',
+    error: '#F56565',
+    warning: '#ECC94B',
+    success: '#48BB78'
   },
   transition: {
     tran02: 'all 0.2s ease',

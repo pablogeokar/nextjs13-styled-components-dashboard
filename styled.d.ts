@@ -9,6 +9,10 @@ declare module "styled-components" {
       primaryLight: string;
       toggle: string;
       text: string;
+      info: string;
+      error: string;
+      warning: string;
+      success: string;
     },
     transition:{
       tran02: string
