@@ -35,6 +35,7 @@ export const Container = styled.li`
     gap: 12px;
     transition: ${({ theme }) => theme.transition.tran04};
     font-size : .850rem ;
+    border-radius: ${({ theme }) => theme.borderRadius.radius01};
     
     svg{
       width: 30px;
@@ -44,13 +45,13 @@ export const Container = styled.li`
     :hover{
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.sidebar};
-      border-radius: 8px;      
+      //border-radius: ${({ theme }) => theme.borderRadius.radius01};
     }  
 
     &.active{
       background-color: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.sidebar};
-      border-radius: 8px;      
+      //border-radius: 8px;      
   }
 
   }

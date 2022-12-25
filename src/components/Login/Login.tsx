@@ -43,9 +43,9 @@ export default function Login() {
             <Button label="Login" />
           </Row>
         </form>
-        
-          <Small>v1.0</Small>
-        
+
+        <Small style={{ color: '#aca9a9' }}>versão v1.0</Small>
+
       </Box>
     </Page>
   )

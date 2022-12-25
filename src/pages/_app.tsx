@@ -7,11 +7,7 @@ import { ToastProvider } from "../contexts/ToastContext";
 import ProtectedLayout from '../components/ProtectedLayout'
 
 
-const themeLight: DefaultTheme = {
-  boxShadow: {
-    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
-    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
-  },
+const themeLight: DefaultTheme = {  
   colors: {
     body: '#E4E9F7',
     sidebar: '#f1f2f6',
@@ -24,6 +20,13 @@ const themeLight: DefaultTheme = {
     warning: '#ECC94B',
     success: '#48BB78'
   },
+  boxShadow: {
+    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  },
+  borderRadius:{
+    radius01: '8px'
+  },
   transition: {
     tran02: 'all 0.2s ease',
     tran03: 'all 0.3s ease',
@@ -32,11 +35,7 @@ const themeLight: DefaultTheme = {
   }
 }
 
-const themeDark: DefaultTheme = {
-  boxShadow: {
-    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
-    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
-  },
+const themeDark: DefaultTheme = {  
   colors: {
     body: '#18191A',
     sidebar: '#242526',
@@ -54,6 +53,13 @@ const themeDark: DefaultTheme = {
     tran03: 'all 0.3s ease',
     tran04: 'all 0.4s ease',
     tran05: 'all 0.6s ease',
+  },
+  boxShadow: {
+    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  },
+  borderRadius:{
+    radius01: '8px'
   }
 }
 

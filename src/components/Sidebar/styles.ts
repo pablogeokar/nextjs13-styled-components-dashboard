@@ -34,10 +34,6 @@ export const Wrapper = styled.div`
       }
     }
   }
-
-  .sidebar-footer {
-    //background-color: ${({ theme }) => theme.colors.primary};
-  }
 `;
 
 export const Toggle = styled.div`
@@ -74,7 +70,6 @@ export const Menu = styled.ul`
   margin-top: 24px;
 
   &.footer {
-    margin-top: 0;
-    //color: rgba(255, 255, 255, 0.5);
+    margin-top: 0;    
   }
 `;

@@ -1,10 +1,12 @@
-import { Sidebar, Layout, Login, Loading } from "../../components";
+import { Sidebar, Layout, Login, Loading, Dropdown } from "../../components";
+import { SignOut } from "phosphor-react";
 import { useSession } from 'next-auth/react'
 import { ReactNode, useEffect } from "react";
+import { signOut } from 'next-auth/react'
 import Router from 'next/router'
 
 type TProtectedLayout = {
-  children?: ReactNode
+  children: ReactNode
 }
 
 export default function ProtectedLayout({ children }: TProtectedLayout) {
@@ -15,6 +17,21 @@ export default function ProtectedLayout({ children }: TProtectedLayout) {
     status === 'unauthenticated' &&
       Router.push('/login')
   }, [status])
+
+  function UserDropdown() {
+    return (
+      <>
+        <Dropdown.Row>
+          <Dropdown.Avatar src={user.image ? user.image : '/imgs/user.png'} alt="" />
+          <Dropdown.Text>{user.name}</Dropdown.Text>
+          <Dropdown.Small>{user.email}</Dropdown.Small>
+        </Dropdown.Row>
+        <Dropdown.Row>
+          <Dropdown.Link label="Logout" icon={<SignOut />} onClick={() => signOut()} />
+        </Dropdown.Row>
+      </>
+    )
+  }
 
   return (
     <>
@@ -33,10 +50,10 @@ export default function ProtectedLayout({ children }: TProtectedLayout) {
             <Layout.Row>
               <Layout.Header>
                 <div></div>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <span style={{ fontSize: '.8rem', color: '#5a5a5a' }}>{user.name}</span>
+                <Dropdown.Component options={<UserDropdown />}>
+                  <span style={{ fontSize: '.8rem', color: '#424242' }}>{user.name}</span>
                   <Layout.Avatar src={user.image ? user.image : '/imgs/user.png'} onError={(e: any) => { e.target.onError = null; e.target.src = "imgs/user.png" }} />
-                </div>
+                </Dropdown.Component>
               </Layout.Header>
             </Layout.Row>
             {children}

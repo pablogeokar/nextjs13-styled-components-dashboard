@@ -22,7 +22,7 @@ export const Header = styled.header`
   height: 70px;
   background-color: #fff;
   padding: 16px;
-  overflow: hidden;
+  //overflow: hidden;
 `;
 
 export const Avatar = styled.img`
