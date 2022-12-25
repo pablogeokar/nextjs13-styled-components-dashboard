@@ -2,6 +2,10 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
+    boxShadow:{
+      shadow01: string;
+      shadow02: string;
+    },
     colors: {
       body: string;
       sidebar: string;

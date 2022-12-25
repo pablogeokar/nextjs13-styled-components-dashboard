@@ -7,9 +7,8 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 100vh;
   width: 250px;
-  //background: ${({ theme }) => theme.colors.sidebar};
-  background: #f1f2f6;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: ${({ theme }) => theme.colors.sidebar};
+  box-shadow: ${({ theme }) => theme.boxShadow.shadow02};
   color: ${({ theme }) => theme.colors.text};
   transition: ${({ theme }) => theme.transition.tran04};
 
@@ -17,7 +16,6 @@ export const Wrapper = styled.div`
     width: 88px;
     @media only screen and (max-width: 768px) {
       width: 0;
-      //left: -88px;
     }
   }
 
@@ -35,6 +33,10 @@ export const Wrapper = styled.div`
         display: none;
       }
     }
+  }
+
+  .sidebar-footer {
+    //background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -59,7 +61,7 @@ export const Toggle = styled.div`
   &.close {
     svg {
       transform: rotate(0deg);
-    }    
+    }
   }
   :hover {
     filter: saturate(1.4);
@@ -68,6 +70,11 @@ export const Toggle = styled.div`
 
 export const Menu = styled.ul`
   list-style: none;
-  padding: 0;
+  padding: 4px;
   margin-top: 24px;
+
+  &.footer {
+    margin-top: 0;
+    //color: rgba(255, 255, 255, 0.5);
+  }
 `;

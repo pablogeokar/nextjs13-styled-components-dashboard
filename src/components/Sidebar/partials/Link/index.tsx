@@ -1,18 +1,21 @@
 import styled from 'styled-components'
 import NextLink from 'next/link'
 import { ReactElement } from 'react';
+import { useRouter } from 'next/router';
 
 type TLink = {
   close?: boolean
   label?: string
   icon?: ReactElement
   link?: string
+  onClick?: () => void
 }
 
-export function Link({ label, icon, link, close = false }: TLink) {
+export function Link({ label, icon, link, onClick, close = false }: TLink) {
+  const router = useRouter()
   return (
-    <Container className={close && 'close'}>
-      <NextLink href={link ? link : '#'} className='link'>
+    <Container className={close && 'close'} onClick={onClick}>
+      <NextLink href={link ? link : ''} className={`link ${router.asPath === link && 'active'}`}>
         {icon}
         <span>{label}</span>
       </NextLink>
@@ -22,16 +25,16 @@ export function Link({ label, icon, link, close = false }: TLink) {
 
 
 export const Container = styled.li`  
-  padding: 4px;
-  position: relative;    
+  padding: 2px;
+  position: relative;
     
   .link{
     display: flex;
-    align-items: center;
-    padding: 12px;
-    gap: 8px;
+    align-items: center;    
+    padding: 8px 12px;
+    gap: 12px;
     transition: ${({ theme }) => theme.transition.tran04};
-    font-size : .9rem ;
+    font-size : .850rem ;
     
     svg{
       width: 30px;
@@ -43,6 +46,12 @@ export const Container = styled.li`
       color: ${({ theme }) => theme.colors.sidebar};
       border-radius: 8px;      
     }  
+
+    &.active{
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.sidebar};
+      border-radius: 8px;      
+  }
 
   }
 
@@ -61,7 +70,7 @@ export const Container = styled.li`
         width: 140px;        
       }
       svg{
-        margin-left:12px;         
+        margin-left:9px;         
       }
       :hover{
         span{

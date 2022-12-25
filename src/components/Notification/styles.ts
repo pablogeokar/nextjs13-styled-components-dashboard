@@ -31,6 +31,7 @@ export const Container = styled.div`
   border-left: 6px solid;
   opacity: 0.8;
   overflow: hidden;
+  cursor: pointer;
   animation: ${ToastInRight} 0.7s;
 
   &.info {
@@ -44,6 +45,9 @@ export const Container = styled.div`
   }
   &.success {
     border-color: ${({ theme }) => theme.colors.success};
+  }
+  :hover {
+    opacity: 1;
   }
 
   .close {

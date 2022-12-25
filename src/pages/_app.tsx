@@ -1,15 +1,20 @@
 import type { AppProps } from 'next/app'
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider, useSession } from "next-auth/react"
 import Head from 'next/head'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../components/globalstyles'
 import { ToastProvider } from "../contexts/ToastContext";
+import ProtectedLayout from '../components/ProtectedLayout'
 
 
 const themeLight: DefaultTheme = {
+  boxShadow: {
+    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  },
   colors: {
     body: '#E4E9F7',
-    sidebar: '#FFF',
+    sidebar: '#f1f2f6',
     primary: '#0284c7',
     primaryLight: '#f3f4f6',
     toggle: '#f3f4f6',
@@ -28,6 +33,10 @@ const themeLight: DefaultTheme = {
 }
 
 const themeDark: DefaultTheme = {
+  boxShadow: {
+    shadow01: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+    shadow02: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+  },
   colors: {
     body: '#18191A',
     sidebar: '#242526',
@@ -58,7 +67,9 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
         <ToastProvider>
-          <Component {...pageProps} />
+          <ProtectedLayout>
+            <Component {...pageProps} />
+          </ProtectedLayout>
         </ToastProvider>
       </ThemeProvider>
     </SessionProvider>
