@@ -22,10 +22,13 @@ function Component({ children, options }: TDropdown) {
     <Wrapper onClick={() => setIsOpen(!isOpen)} className={isOpen && 'open'}>
       {children}
       <CaretDown size={18} weight="thin" style={{ marginLeft: '-6px' }} />
+
       <ContainerOptions className={!isOpen && 'close'}>
         {options}
       </ContainerOptions>
-    </Wrapper>
+
+
+    </Wrapper >
   )
 }
 
@@ -68,13 +71,13 @@ const LinkStyled = styled.div`
 `
 
 const Wrapper = styled.div`
+  position: relative;  
   display: flex; 
   gap: 8px; 
   align-items: center; 
   padding: 8px; 
   cursor: pointer; 
-  position: relative;  
-  
+    
   svg{
     transition: ${({ theme }) => theme.transition.tran04};  
   }
@@ -83,8 +86,7 @@ const Wrapper = styled.div`
     svg{
       transform: rotate(180deg);            
     }
-  }
-  
+  }  
 `
 
 const ContainerOptions = styled.div`
@@ -96,8 +98,8 @@ const ContainerOptions = styled.div`
   z-index: 1000; 
   margin-top: 8px; 
   color: #424242;
-  right: 0;   
-  top: 40px;   
+  right: 0;
+  top:10px;
   background-color: #fff;
   box-shadow: ${({ theme }) => theme.boxShadow.shadow01};  
   cursor: default;   

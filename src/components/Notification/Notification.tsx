@@ -6,7 +6,7 @@ import { useCallback, useEffect } from 'react';
 type TNotification = {
   id?: number
   title: string;
-  text: string;
+  text?: string;
   type?: 'info' | 'error' | 'warning' | 'success';
 }
 

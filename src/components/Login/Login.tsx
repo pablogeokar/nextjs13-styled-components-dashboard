@@ -16,9 +16,9 @@ export default function Login() {
     e.preventDefault()
     // Faz o login e armazena o resultado em res
     const res = await signIn('credentials', { email: userInfo.email, password: userInfo.password, redirect: false, callbackUrl: '/dashboard' })
-
     // Se não retornar nenhum erro ao logar então redireciona para o dashboard
     if (!res.error) {
+      toastMessage({ title: 'Login realizado!', type: 'info' })
       Router.push('/dashboard')
     } else {
       toastMessage({ title: 'Credenciais Inválidas', text: res.error, type: 'error' })

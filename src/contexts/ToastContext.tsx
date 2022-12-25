@@ -4,7 +4,7 @@ import { ToastNotification } from '../components';
 type TNotification = {
   id?: number
   title: string;
-  text: string;
+  text?: string;
   type?: 'info' | 'error' | 'warning' | 'success';
 }
 

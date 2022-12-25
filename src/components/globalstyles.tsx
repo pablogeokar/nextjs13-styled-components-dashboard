@@ -9,11 +9,9 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {    
     padding: 0;
-    margin: 0;
-    ${poppins.style}
-    height: 100vh;    
+    margin: 0;    
+    ${poppins.style}       
     background:  ${({ theme }) => theme.colors.body};    
-    transition:  ${({ theme }) => theme.transition.tran04};
   }
 
   a {
