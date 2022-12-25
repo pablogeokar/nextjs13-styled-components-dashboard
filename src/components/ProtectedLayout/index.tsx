@@ -1,4 +1,4 @@
-import { Sidebar, Layout, Login } from "../../components";
+import { Sidebar, Layout, Login, Loading } from "../../components";
 import { useSession } from 'next-auth/react'
 import { ReactNode, useEffect } from "react";
 import Router from 'next/router'
@@ -22,7 +22,7 @@ export default function ProtectedLayout({ children }: TProtectedLayout) {
         <Login />
       }
       {status === 'loading' &&
-        <h1>Aguarde...</h1>
+        <Loading />
       }
       {status === 'authenticated' &&
         <Layout.Container>

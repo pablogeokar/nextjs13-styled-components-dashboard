@@ -43,6 +43,9 @@ export default function Login() {
             <Button label="Login" />
           </Row>
         </form>
+        
+          <Small>v1.0</Small>
+        
       </Box>
     </Page>
   )
