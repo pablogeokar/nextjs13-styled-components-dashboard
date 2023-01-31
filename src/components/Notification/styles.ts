@@ -98,13 +98,13 @@ export const Message = styled.div`
 
 export const Title = styled.span`
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #333;
 `;
 
 export const Text = styled.span`
   font-weight: 400;
-  font-size: 0.885rem;
+  font-size: 0.8rem;
   color: #666;
 `;
 export const Progress = styled.div`
